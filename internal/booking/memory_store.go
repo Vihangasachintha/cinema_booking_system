@@ -10,7 +10,7 @@ func NewMemoryStore() *MemoryStore {
 	}
 }
 
-func (s *MemoryStore) Book(b Booking) (Booking,error) {
+func (s *MemoryStore) Book(b Booking) error {
 	if _, exists := s.bookings[b.SeatID]; exists {
 		return ErrSeatAlreadyBooked
 	}
